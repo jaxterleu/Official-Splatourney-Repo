@@ -1,0 +1,166 @@
+{% extends 'SplatourneyApp/base.html' %}
+{% block title %} <h1> Team Registration </h1> {% endblock %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="SplatourneyApp/splatourney.css">
+</head>
+
+<body>
+  <style>
+        body{
+          background-color: transparent;
+        }
+        .card{
+          background-color: #D9D9D9;
+          width:800px;
+          padding-top: 60px;
+          padding-bottom: 40px;
+          padding-left: 40px;
+          padding-right: 40px;
+
+        }
+
+        .card-title{
+          text-decoration:solid;
+        }
+    
+        .form{
+          flex-direction: row;
+        }
+
+        .form-control{
+          border-radius: 10px;
+        }
+
+        .form-select{
+          border-radius: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          padding-right: 50px;
+        }
+      
+        .btn-primary {
+          color: white;
+          background-color:#008CC6;
+          border: none;
+          border-radius: 10px;
+        }
+
+    .contained {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Ensure padding is included in height calculation */
+    }
+    .btn-custom {
+        width: 400px;
+        height: 52px;
+        font-size: 1.2em;
+        margin: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 35px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:white;
+    }
+    .current {
+        background-color: #ef216c;
+    }
+    .others {
+        background-color: #008CC6;
+    }
+    p {
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 44px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:white;}
+  </style>
+
+<p>Create Tournament</p>
+
+  <div class="has-bg-img">
+    <div class="bg-img bg-cover" style="background-image: url('splatoon3-pattern-02-3840x2160-1.webp'); height:100%; width:100%;">
+      <div class="container">
+        <div class="card mx-auto">
+            <div class="card-body">
+              <form class="form">
+                <div class="mb-3">
+                  <label for="tournament_title" class="form-label">TITLE</label>
+                  <input type="text" class="form-control" id="tournament_title" placeholder="Enter tournament title">
+                </div>
+                <div class="mb-3">
+                  <label for="tournament_description" class="form-label">DESCRIPTION</label>
+                  <div>
+                    <textarea style="border-radius: 10px;border-color: #D9D9D9;" id="tournament_description" name="tournament_description" rows="4" cols="80" placeholder=" Enter detailed description"></textarea>
+                  </div>
+                  
+                </div>
+                <div class="mb-3 justify-content-center" style="position:relative">
+                  <label for="roles" class="form-label pt-3">MODE</label>
+                  <div class="mb-3" style="margin-left: 50px;">
+                    
+                    <input type="radio" class="form-check-input" id="online" name="tournament_mode">
+                    <label class="form-check-label" for="tournament_mode">Online</label>
+
+                    <input type="radio" class="form-check-input" id="lan" style="margin-left:25px;" name="tournament_mode">
+                    <label class="form-check-label" for="tournament_mode" style="margin-left:50px">Lan</label>
+                  </div>
+                </div>
+
+                <div class="mb-3 justify-content-center" style="position:relative">
+                  <label for="roles" class="form-label pt-3">SCHEDULE</label>
+                  <div class="mb-3" style="margin-left: 50px;">
+
+                    <label class="form-check-label" for="front-line">Start: </label>
+                    <div style="display:inline-block;width:150px;">
+                      <input type="datetime-local" style="width:240px;" class="form-control" id="tournament_schedule" name="tournament_schedule">
+                    </div>
+                    
+                  </div>
+
+                  <div class="mb-3" style="margin-left: 50px;">
+                    <label class="form-check-label" for="front-line">End: </label>
+                    <div style="display:inline-block;width:150px;">
+                      <input type="datetime-local" style="width:240px;" class="form-control" id="tournament_schedule" name="tournament_schedule">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3 justify-content-center" style="position:relative">
+                  <label for="roles" class="form-label pt-3">STATUS</label>
+                  <div class="mb-3" style="margin-left: 50px;"> 
+                    
+                    <input type="radio" class="form-check-input" id="open" name="tournament_status">
+                    <label class="form-check-label" for="tournament_status">Open</label>
+
+                    <input type="radio" class="form-check-input" id="closed" style="margin-left:25px;" name="tournament_status">
+                    <label class="form-check-label" for="tournament_status" style="margin-left:50px">Closed</label>
+                  </div>
+                </div>
+                <div style="text-align: right;">
+                  <button style= "background-color: #ef216c;" type="submit" class="btn btn-primary justify-content-end">SAVE</button>
+                </div>
+                
+              </form>
+            </div>
+          </div>      
+      </div>
+    </div>
+  </div>
+</body>
+  
+
+{% endblock %}

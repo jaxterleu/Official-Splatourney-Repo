@@ -1,0 +1,162 @@
+{% extends 'SplatourneyApp/base.html' %}
+{% block title %} <h1> Tournaments </h1> {% endblock %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="SplatourneyApp/splatourney.css">
+</head>
+
+<body>
+  <style>
+        body{
+          background-color: transparent;
+        }
+        .card{
+          background-color: #D9D9D9;
+          width:800px;
+          padding-top: 60px;
+          padding-bottom: 40px;
+          padding-left: 40px;
+          padding-right: 40px;
+
+        }
+
+        .card-title{
+          text-decoration:solid;
+        }
+    
+        .form{
+          flex-direction: row;
+        }
+
+        .form-control{
+          border-radius: 10px;
+        }
+
+        .form-select{
+          border-radius: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          padding-right: 50px;
+        }
+      
+        .btn-primary {
+          color: white;
+          background-color:#008CC6;
+          border: none;
+          border-radius: 10px;
+
+          
+        }
+
+    .contained {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Ensure padding is included in height calculation */
+    }
+    .btn-custom {
+        width: 400px;
+        height: 52px;
+        font-size: 1.2em;
+        margin: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 35px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:white;
+    }
+    .current {
+        background-color: #ef216c;
+    }
+    .others {
+        background-color: #008CC6;
+    }
+    .p {
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 44px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+  </style>
+
+  <div class="has-bg-img">
+    <div class="bg-img bg-cover" style="background-image: url('splatoon3-pattern-02-3840x2160-1.webp'); height:100%; width:100%;">
+      <div class="container">
+        <div class="card mx-auto">
+          <a style="font-size: 50px; color: #ef216c;" href="{% url 'tournament_details' %}">BAYAN INK</a>
+            <div class="card-body">
+                <div class="mb-3">
+                  <label style="font-family:'Oswald', sans-serif;" class="form-label">TOURNAMENT DETAILS</label>
+                  <!-- insert non-hardcoded tournament details here -->
+                  <p>Splatoon Philippines second online tourney! Teams are premade and must consist of 4 or more players.
+                    All teams are required to atleast have their captain have a discord account and be inside the Splatoon Ph...
+                  </p>
+
+                  <label style="font-family:'Oswald', sans-serif;" class="form-label">SCHEDULE</label>
+                  <!-- insert non-hardcoded tournament schedule here -->
+                  <p>
+                    Start Jan 24, 2024    12:00
+                  </p>
+                  <p>
+                    End Jan 24, 2024    17:00
+                  </p>
+                </div>
+                
+                <div style="text-align: right;">
+                    <a style="font-size: 50px; color: #ef216c; text-align: right;" href="{% url 'tournament_details' %}">OPEN</a>
+                </div>
+            </div>
+          </div>      
+      </div>
+
+      <div class="card mx-auto">
+        <a style="font-size: 50px; color: grey;" href="{% url 'tournament_details' %}">BETA INK</a>
+          <div class="card-body">
+              <div class="mb-3">
+                <label style="font-family:'Oswald', sans-serif;" class="form-label">TOURNAMENT DETAILS</label>
+                <!-- insert non-hardcoded tournament details here -->
+                <p>Splatoon Philippines second online tourney! Teams are premade and must consist of 4 or more players.
+                  All teams are required to atleast have their captain have a discord account and be inside the Splatoon Ph...
+                </p>
+
+                <label style="font-family:'Oswald', sans-serif;" class="form-label">SCHEDULE</label>
+                <!-- insert non-hardcoded tournament schedule here -->
+                <p>
+                  Start Jan 24, 2024    12:00
+                </p>
+                <p>
+                  End Jan 24, 2024    17:00
+                </p>
+              </div>
+              
+              <div style="text-align: right;">
+                <label style="font-family:'Oswald', sans-serif;" class="form-label">WINNER</label>
+                <!-- insert non-hardcoded tournament winner here -->
+                <p>
+                  CONTENT C4RTEL
+                </p>
+              </div>
+          </div>
+        </div>
+        <div class="fixed ">
+          <a href="{% url 'create_tournament' %}" class="btn btn-custom player">Create Tournament</a>
+        </div>    
+    </div>
+    </div>
+  </div>
+</body>
+  
+
+{% endblock %}

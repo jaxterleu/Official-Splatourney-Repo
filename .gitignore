@@ -1,0 +1,5 @@
+venv
+/venv
+/SplatourneySystem/db.sqlite3
+/SplatourneySystem/__pycache__
+/__pycache__

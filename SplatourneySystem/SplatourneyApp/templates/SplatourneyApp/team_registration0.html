@@ -1,0 +1,118 @@
+{% extends 'SplatourneyApp/base.html' %}
+{% block title %} <h1> Team Registration </h1> {% endblock %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="SplatourneyApp/splatourney.css">
+</head>
+
+<body>
+  <style>
+        body{
+          background-color: transparent;
+        }
+        .card{
+          background-color: #D9D9D9;
+          width:800px;
+          padding-top: 60px;
+          padding-bottom: 40px;
+          padding-left: 40px;
+          padding-right: 40px;
+
+        }
+
+        .card-title{
+          text-decoration:solid;
+        }
+    
+        .form{
+          flex-direction: row;
+        }
+
+        .form-control{
+          border-radius: 10px;
+        }
+
+        .form-select{
+          border-radius: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          padding-right: 50px;
+        }
+      
+        .btn-primary {
+          color: white;
+          background-color:#008CC6;
+          border: none;
+          border-radius: 10px;
+
+          
+        }
+
+    .contained {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Ensure padding is included in height calculation */
+    }
+    .btn-custom {
+        width: 400px;
+        height: 52px;
+        font-size: 1.2em;
+        margin: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 35px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:white;
+    }
+    .current {
+        background-color: #ef216c;
+    }
+    .others {
+        background-color: #008CC6;
+    }
+    p {
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 44px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:white;}
+  </style>
+
+<p>TEAM REGISTRATION</p>
+
+  <div class="has-bg-img">
+    <div class="bg-img bg-cover" style="background-image: url('splatoon3-pattern-02-3840x2160-1.webp'); height:100%; width:100%;">
+      <div class="container">
+        <div class="card mx-auto">
+          <h5 class="card-title mx-auto">Create Team Name</h5>
+            <div class="card-body">
+              <form class="form">
+                <div class="mb-3">
+                  <label for="teamname" class="form-label">TEAM NAME</label>
+                  <input type="text" class="form-control" id="teamname" placeholder="Enter Team name">
+                </div>
+                
+                  <a href="{% url 'team_registration1' %}" class="btn btn-primary justify-content-right">ENTER TEAM DETAILS</a>
+              </form>
+            </div>
+          </div>      
+      </div>
+    </div>
+  </div>
+</body>
+  
+
+{% endblock %}

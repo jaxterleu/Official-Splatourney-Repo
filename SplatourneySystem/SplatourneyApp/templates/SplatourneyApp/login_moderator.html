@@ -1,0 +1,77 @@
+{% extends 'SplatourneyApp/base.html' %}
+{% block title %} <h1> Login Moderator</h1> {% endblock %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="SplatourneyApp/splatourney.css">
+</head>
+
+<body>
+  <style>
+        body{
+          background-color: transparent;
+        }
+        .card{
+          background-color: #D9D9D9;
+          width:800px;
+          padding-top: 60px;
+          padding-bottom: 40px;
+          padding-left: 40px;
+          padding-right: 40px;
+
+        }
+
+        .card-title{
+          text-decoration:solid;
+        }
+    
+        .form{
+          flex-direction: row;
+        }
+
+        .form-control{
+          border-radius: 10px;
+        }
+
+        .form-select{
+          border-radius: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          padding-right: 50px;
+        }
+      
+        .btn-primary {
+          color: white;
+          background-color:#008CC6;
+          border: none;
+          border-radius: 10px;
+        }
+  </style>
+
+  <div class="has-bg-img">
+    <div class="bg-img bg-cover" style="background-image: url('splatoon3-pattern-02-3840x2160-1.webp'); height:100%; width:100%;">
+      <div class="container">
+        <div class="card mx-auto">
+          <h5 class="card-title mx-auto">LOGIN</h5>
+            <div class="card-body">
+              <form class="form" method="POST" action="{% url 'login_moderator' %}"> {% csrf_token %}
+                <div class="mb-3">
+                  <label for="ModUsernameTrial" class="form-label">USERNAME</label>
+                  <input type="text" class="form-control" id="ModUsernameTrial" name='mod_name' placeholder="Enter Username">
+                </div>
+                <div class="mb-3">
+                  <label for="ModPasswordTrial" class="form-label">PASSWORD</label>
+                  <input type="Password" class="form-control" id="ModPasswordTrial" name='mod_password' placeholder="Enter Password">
+                </div>
+                  <button type="submit" class="btn btn-primary justify-content-right">REGISTER</button>
+              </form>
+            </div>
+          </div>      
+      </div>
+    </div>
+  </div>
+</body>
+  
+
+{% endblock %}

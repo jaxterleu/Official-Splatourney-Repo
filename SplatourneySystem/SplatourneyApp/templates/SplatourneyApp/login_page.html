@@ -1,0 +1,59 @@
+{% extends 'SplatourneyApp/base.html' %}
+{% block title %} <h1>LOG-IN</h1> {% endblock %}
+
+{% block content %}
+
+<style>
+   
+    .contained {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Ensure padding is included in height calculation */
+    }
+    .btn-custom {
+        width: 561px;
+        height: 52px;
+        font-size: 1.2em;
+        margin: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 35px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:white;
+    }
+    .player {
+        background-color: #ef216c;
+    }
+    .team {
+        background-color: #008CC6;
+    }
+    p {
+        font-family: 'Oswald', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 44px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:white;
+        
+    }
+</style>
+<div class="contained">
+    <p>CHOOSE LOG-IN TYPE</p>
+    <a href="{% url 'login_moderator' %}" class="btn btn-custom player">MODERATOR</a>
+    <a href="{% url 'tournaments_screen' %}" class="btn btn-custom team">PLAYER</a>
+</div>
+
+
+  
+
+{% endblock %}
+  

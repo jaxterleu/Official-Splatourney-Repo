@@ -1,0 +1,94 @@
+{% extends 'SplatourneyApp/base.html' %}
+{% block title %} <h1> Tournament Details </h1> {% endblock %}
+
+{% block navbar %}
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'tournament_details' %}">DETAILS <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'view_registrations' %}">TEAMS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">LIVE BRACKET</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'pairing_screens' %}">PAIRINGS</a>
+  </li>
+{% endblock %}
+
+{% block content %}
+<style>
+    .btn-custom {
+        font-size: 1.2em;
+        margin: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-family: 'Luckiest Guy', sans-serif;
+        line-height: 35px;
+        letter-spacing: 0em;
+        text-align: center;
+        background-color: #008CC6;
+        color:white
+    }</style>
+<body class="mt-5">
+    <div class = "row">
+      <div class="title_card col-12 mb-4">
+        <h1>GLHF Tourney</h1>
+      </div>
+    </div>
+    <div class = "row">
+      <div class="detail_text col-12">
+
+<h3>TOURNAMENT DETAILS</h3>
+<p>Splatoon Philippines second online tourney! Teams are pre-made and must consist of 4 or more players.
+All teams are required to at least have their captain have a discord account and be inside the Splatoon Philippines Discord server, as communication and the tournament itself will take place there. After reading these rules, register using this same app! </p>
+
+<h3>DEFINITION OF TERMS</h3>
+<p>Match = A “best of x games” in between 2 teams.</p>
+<p>Game = A single game (ex: a game of splat zones).</p>
+<p>Round = The bracket level referred to in the bracket link (provided soon in the discord).</p>
+<p>Captain = The team leader, and the primary person of contact to communicate with a team.</p>
+
+<h3>GENERAL INFORMATION</h3>
+<p>This is a local only tourney so only Filipino players are allowed to participate.
+Double Elimination Brackets (w/Bracket Reset)
+Best of 3 for each. Best of 5 in Semi-Finals and Grand Finals.
+Game mode and maps are chosen from the maplist on the bottom of this document.
+Check-in will begin in the day of the tournament at 2:00PM and will end at 2:45PM
+Chosen matches will be streamed and commentated! So stay alert if your team gets pinged!</p>
+
+<h3>GENERAL RULES</h3>
+<p>The lobby pool to be used is “BAYANINK” (To join a pool, go to the notifications tab in the lobby, and press "+" to enter a pool name. Pools allow players to join others’ games in the same pool without needing to add friend codes)
+Be a good sport, any high or consistent amount of toxicity, rage, verbal abuse, etc. outside of your own team members will get you or your whole team disqualified. Bad manners (BM) such as squid-bagging and other taunts do not count as an offense as long as it’s seldom or within reasonable degree. 
+There will be no complaints in regards to lag. Please agree with the team captain you are matched with on who will be hosting the private battle lobby.
+No in-game spectators are allowed aside from the commentators and tournament organizers.
+Please report any violation of these rules by pinging any admin or moderator in #bayanink-support.
+Admin and Moderator decisions will take precedence over any rules indicated in this document should any conflicting stalemates arise.</p>
+
+<h3>DISCONNECTION/REPLAY RULES</h3>
+<p>Games with disconnects (DC’s) will not be counted in score if any one of the three DC conditions below are met:
+The timer has not gone past more than 1 minute with the ranked objective not having less than 30 remaining objective points on any team.
+At least one player from each team disconnected during the match in a short amount of time when there is more than 10 seconds left in the timer.
+The DC happened within the lobby or within the first 10 seconds of a game
+If a disconnecting team meets DC condition 1, everyone must immediately stop playing. If there is conflict in regards to a replay being granted, a back-record (if captured by any player) will be used to double check if a replay is eligible. If the claim of DC condition 1 is false, that game is counted as a loss for the disconnecting team.
+Only one replay is granted per team in a match if DC condition 1 happens. If a replay is already granted for the disconnecting team, everyone must continue playing with remaining players. The only time more than one replay is permitted is if the opposing team unanimously agrees to grant another replay. All eligible replays must have players play the exact same loadout, gear sets, stage, and mode unless the disconnecting team decides to switch players for better connection.
+The only time use of the “early end” code in private battle is permitted is if a replay is eligible. If a team falsely uses this code then a game is lost for the team that used it.</p>
+
+<h3>MISSING PLAYERS</h3>
+<p>In the event of missing members in a matchup, the team must either continue with current members, or choose to forfeit a match or the tournament itself.
+Choosing to stall/wait for a missing member should not happen for extended periods of time. For the first 10 minutes of a team stalling, a game is forfeit for that team, and then every 5 minutes after. This timer only starts when an organizer determines a stalling team in which the team is issued a pinged warning for.</p>
+
+<p>This tourney is all for fun! None of the SPH admins, moderators, and volunteers profit from this event! The only thing we will ask is your patience for any technical issues or conflicts that may arise. Thank you!</p>
+
+<h3>PRIZES</h3>
+The 1st place team will receive a bust-up banner of their team made by @eneosshi. The 2nd place team will also receive a bust-up banner of their team made by @MedzOverdose. A maximum of 6 members will be drawn in the illustration Keep in mind that these art prizes are free-of-charge! So please be patient in-regards to its process and completion! The captains of the 1st and 2nd placing teams will be contacted after the tourney for details and discussion of making the art piece prize.
+      </div>
+    </div>  
+
+  <div class="fixed ">
+    <a href="{% url 'registration_type' %}" class="btn btn-custom player">REGISTER</a>
+    <a href="{% url 'start_tournament' %}" class="btn btn-custom player">START</a>
+  </div>
+</body>
+{% endblock %}

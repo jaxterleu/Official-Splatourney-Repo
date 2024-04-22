@@ -1,0 +1,67 @@
+{% extends 'splatourneyApp/base.html' %}
+{% load static %}
+{% block title %} <h1> Registrations </h1> {% endblock %}
+
+{% block navbar %}
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'tournament_details' %}">DETAILS <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'view_registrations' %}">TEAMS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">LIVE BRACKET</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'pairing_screens' %}">PAIRINGS</a>
+  </li>
+{% endblock %}
+
+    {% block content %}
+    <body>
+        <!--Heading-->
+        <div class="row">
+            <div class = "col-10">
+                <h2 class="mt-3 mb-4" style="font-weight: bold; text-align: left;">Registrations</h2>
+            </div>
+            <!--Button to Create team-->
+            <div class = "col-2">
+                <a href="{% url 'create_team' %}"  class="button"> Create Team </a>
+            </div>
+        </div>
+        <!--Header for Registrations-->
+        <div class="table-responsive" style="max-height: 500px;">
+            <table class="table table-hover shadow-sm" style="background-color: #FFFFFF;">
+                <thead>
+                    <tr>
+                        <th class="table-dark" style="background-color: #262947" scope="col"> Player Name </th>
+                        <th class="table-dark" style="background-color: #262947" scope="col"> IGN </th>
+                        <th class="table-dark" style="background-color: #262947" scope="col"> Rank </th>
+                        <th class="table-dark" style="background-color: #262947" scope="col"> Role/s </th>
+                        <th class="table-dark" style="background-color: #262947" scope="col"> Check-in Status </th>
+                        <th class="table-dark" style="background-color: #262947" scope="col"> </th>
+                    </tr>
+                </thead>
+
+                <tbody class="table-group-divider">
+                    {% for p in Player %}
+                        <tr>
+                                    <td> {{ p.getPlayerFullName }} </td>
+                                    <td> {{ p.getPlayer_in_game_name }} </td>
+                                    <td> {{ p.getPlayerRank }} </td>
+                                    <td> {{ p.getPlayerRole }}
+                            <td>
+                                <!--Buttons: Options-->
+                                <div class="row gy-2 gx-2 mb-2">
+                                    <div class="col-auto">
+                                        <a href="#" class="btn btn-dark shadow-sm" style="background-color: #1D7874; border-color: #1D7874;"> EDIT </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+    {% endblock %}

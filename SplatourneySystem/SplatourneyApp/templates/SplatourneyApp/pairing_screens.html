@@ -1,0 +1,127 @@
+{% extends 'SplatourneyApp/base.html' %}
+{% block title %} <h1> Pairings - "Bayan Ink" </h1> {% endblock %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="SplatourneyApp/splatourney.css">
+</head>
+
+<body>
+  <style>
+        body{
+          background-color: transparent;
+        }
+        .card{
+          background-color: transparent;
+          width:800px;
+          padding-top: 60px;
+          padding-bottom: 40px;
+          padding-left: 40px;
+          padding-right: 40px;
+
+        }
+
+        .card-title{
+          text-decoration:solid;
+        }
+    
+        .form{
+          flex-direction: row;
+
+        }
+
+        .form-control{
+          border-radius: 10px;
+        }
+
+        .form-select{
+          border-radius: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          padding-right: 50px;
+        }
+      
+        .btn-primary {
+          color: white;
+          background-color:#008CC6;
+          border: none;
+          border-radius: 10px;
+        }
+
+        .search{
+          flex-direction: row;
+          float:right;
+          width:250px;
+          background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+         background-repeat: no-repeat;
+          background-position: left center;
+          padding-left: 40px;
+        }
+        .btn-primary {
+          color: white;
+          background-color:#008CC6;
+          border: none;
+          border-radius: 10px;
+        }
+        .btn-custom {
+            
+        font-size: 1.2em;
+        border-radius: 20px;
+        width:100px;
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: 20px;
+        font-weight: 200;
+        line-height: 35px;
+        text-align: center;
+        color:white;
+        background-color: #ef216c;
+    }
+  </style>
+
+  <div class="has-bg-img">
+    <div class="bg-img bg-cover" style="background-image: url('splatoon3-pattern-02-3840x2160-1.webp'); height:100%; width:100%;">
+        <input type="text" class="search" id="SearchBar" placeholder="Search">
+            <div style="padding-top:50px">
+        
+            
+            
+                <table style="width:100%">
+                    <tr style="height:20px">
+                      <td style="background-color:#ef216c; color:white; font-weight:bold; font-family: Arial; width:120px; text-align: center; padding-top:20px"> <a href="" style="text-decoration:none; color:white;">CONCLUDE RESULTS</a></td>
+                      <td style="background-color:#008CC6; color:white; width:60px; text-align:center;">1</td>
+                      <td style="background-color: rgb(44, 51, 51); color:white">Team Name</td>
+                      <td style="background-color: rgb(44, 51, 51); color:white">Average Rank</td>
+                      <td style="background-color: rgb(44, 51, 51); color:white">Check-in Status</td>
+                      <td style="background-color: rgb(44, 51, 51); color:white"> </td>
+                    </tr>
+                    <tr>
+                      <td style="background-color:#ef216c"> </td>
+                      <td style="background-color:#008CC6"> </td>
+                      <td style="background-color:white" >Content Cartel</td>
+                      <td style="background-color:white">X15000</td>
+                      <td style="background-color:white"> <input type="checkbox" class="largeCheckbox"> </td>
+                      <td style="background-color:white; text-align:center"> <a href="#" class="btn btn-custom player">SWAP</a></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#ef216c"> </td>
+                        <td style="background-color:#008CC6"> </td>
+                        <td style="background-color:rgb(227, 227, 227)" >Team Veronika</td>
+                        <td style="background-color:rgb(227, 227, 227)">X2000</td>
+                        <td style="background-color:rgb(227, 227, 227)"> <input type="checkbox" class="largeCheckbox"> </td>
+                        <td style="background-color:rgb(227, 227, 227); text-align:center"> <a href="#" class="btn btn-custom player">SWAP</a></td>
+                      </tr>
+                  </table>
+
+
+
+
+            </div>
+                
+      
+    
+  </div>
+</body>
+  
+
+{% endblock %}
