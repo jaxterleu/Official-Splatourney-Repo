@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+niuvq$8_(5^cnxo4+oi(bl=wl8-nm1-b&%-_w^#sevs#8&e%q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'splatourney.onrender.com']
 
 
 # Application definition
