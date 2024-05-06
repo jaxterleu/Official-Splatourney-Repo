@@ -222,3 +222,6 @@ def edit_team_registration(request):
 
 def create_moderator(request):
     return render(request,'SplatourneyApp/create_moderator.html')
+
+def manage_moderators(request):
+    return render(request,'SplatourneyApp/manage_moderators.html')

@@ -43,4 +43,5 @@ urlpatterns = [
     path('edit_player_registration/', views.edit_player_registration, name='edit_player_registration'),
     path('edit_team_registration/', views.edit_team_registration, name='edit_team_registration'),
     path('create_moderator/', views.create_moderator, name='create_moderator'),
+    path('manage_moderators/', views.manage_moderators, name='manage_moderators'),
 ]
