@@ -1,6 +1,25 @@
 {% extends 'SplatourneyApp/base.html' %}
 {% block title %} <h1> Pairings - "Bayan Ink" </h1> {% endblock %}
 
+{% block navbar %}
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'tournament_details' %}">DETAILS <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'view_registrations' %}">TEAMS</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="#">SCOREBOARD</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" style="color:#008CC6" href="{% url 'pairing_screens' %}">PAIRINGS</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'pairing_screens' %}">LIVE BRACKET</a>
+  </li>
+{% endblock %}
+
+
 {% block content %}
 <head>
   <link rel="stylesheet" href="SplatourneyApp/splatourney.css">
@@ -88,16 +107,16 @@
             
                 <table style="width:100%">
                     <tr style="height:20px">
-                      <td style="background-color:#ef216c; color:white; font-weight:bold; font-family: Arial; width:120px; text-align: center; padding-top:20px"> <a href="" style="text-decoration:none; color:white;">CONCLUDE RESULTS</a></td>
-                      <td style="background-color:#008CC6; color:white; width:60px; text-align:center;">1</td>
+                      <td style="background-color:#ef216c; color:white; font-weight:bold; font-family: Arial; width:120px; text-align: center; padding-top:20px"></td>
+                      <td style="background-color:#008CC6; color:white; width:60px; text-align:center;"></td>
                       <td style="background-color: rgb(44, 51, 51); color:white">Team Name</td>
                       <td style="background-color: rgb(44, 51, 51); color:white">Average Rank</td>
                       <td style="background-color: rgb(44, 51, 51); color:white">Check-in Status</td>
                       <td style="background-color: rgb(44, 51, 51); color:white"> </td>
                     </tr>
                     <tr>
-                      <td style="background-color:#ef216c"> </td>
-                      <td style="background-color:#008CC6"> </td>
+                      <td style="background-color:#ef216c; color:white; font-weight:bold; font-family: Arial; width:120px; text-align: center; padding-top:20px"> <a href="" style="text-decoration:none; color:white;">CONCLUDE RESULTS</a></td>
+                      <td style="background-color:#008CC6; color:white; width:60px; text-align:center;">1</td>
                       <td style="background-color:white" >Content Cartel</td>
                       <td style="background-color:white">X15000</td>
                       <td style="background-color:white"> <input type="checkbox" class="largeCheckbox"> </td>

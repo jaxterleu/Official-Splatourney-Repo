@@ -43,7 +43,7 @@ def registration_type(request):
     return render(request,'SplatourneyApp/registration_type.html')
 
 def team_registration(request):
-    if (request.method=="POST"):
+    if (request.method=="POST"): 
         team_Name = request.POST.get('Team_Name')
         Team.objects.create(team_ID=1, team_Name=team_Name, wins=0, losses=0, team_Rank=8)
         p1_fname=request.POST.get("p1fname")
@@ -211,3 +211,14 @@ def create_team(request):
 
 def tournaments_screen(request):
     return render(request, 'SplatourneyApp/tournaments_screen.html')
+
+def edit_player_registration(request):
+    return render(request,'SplatourneyApp/edit_player_registration.html')
+
+
+def edit_team_registration(request):
+    return render(request,'SplatourneyApp/edit_team_registration.html')
+
+
+def create_moderator(request):
+    return render(request,'SplatourneyApp/create_moderator.html')

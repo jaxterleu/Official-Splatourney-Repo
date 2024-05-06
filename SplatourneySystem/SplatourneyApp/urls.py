@@ -40,4 +40,7 @@ urlpatterns = [
     path('create_tournament', views.create_tournament, name='create_tournament'),
     path('pairing_screens/', views.pairing_screens, name='pairing_screens'),
     path('tournaments_screen/', views.tournaments_screen, name='tournaments_screen'),
+    path('edit_player_registration/', views.edit_player_registration, name='edit_player_registration'),
+    path('edit_team_registration/', views.edit_team_registration, name='edit_team_registration'),
+    path('create_moderator/', views.create_moderator, name='create_moderator'),
 ]

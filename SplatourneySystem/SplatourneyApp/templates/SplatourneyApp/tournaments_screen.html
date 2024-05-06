@@ -1,6 +1,15 @@
 {% extends 'SplatourneyApp/base.html' %}
 {% block title %} <h1> Tournaments </h1> {% endblock %}
-
+{% block navbar %}
+ 
+  <li class="nav-item active">
+    <a class="nav-link" href="#" style="color:#008CC6">TOURNAMENTS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">GLOBAL SCOREBOARD</a>
+  </li>
+ 
+{% endblock %}
 {% block content %}
 <head>
   <link rel="stylesheet" href="SplatourneyApp/splatourney.css">
@@ -14,13 +23,23 @@
         .card{
           background-color: #D9D9D9;
           width:800px;
-          padding-top: 60px;
-          padding-bottom: 40px;
-          padding-left: 40px;
-          padding-right: 40px;
+          padding-top: 40px;
+          padding-bottom: 20px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-radius:20px;
 
         }
+        .card2{
+          width:800px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 40px;
+          padding-right: 40px;
+          margin-left:140px;
+          border-radius:20px;
 
+        }
         .card-title{
           text-decoration:solid;
         }
@@ -89,14 +108,44 @@
         letter-spacing: 0em;
         text-align: center;
     }
+    .buttonStart {
+      background-color: #008CC6;
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      font-size:20px;
+      padding:30px
+}
   </style>
 
   <div class="has-bg-img">
     <div class="bg-img bg-cover" style="background-image: url('splatoon3-pattern-02-3840x2160-1.webp'); height:100%; width:100%;">
       <div class="container">
-        <div class="card mx-auto">
-          <a style="font-size: 50px; color: #ef216c;" href="{% url 'tournament_details' %}">BAYAN INK</a>
-            <div class="card-body">
+
+        <div class="card mx-auto" style="padding:0px">
+            
+          <div class="card-body" style="background-color:#ef216c; border-radius:15px">
+            <a style="font-size: 50px; color: white;" href="{% url 'tournament_details' %}">BAYAN INK</a>
+
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <i class="fa fa-edit" style="font-size:48px;color:white; padding-left:10px"></i>
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <i class="fa fa-trash-o" style="font-size:60px; color:white; float:right"></i>
+          </div>
+
+
+
+        
+            <div class="card-body" >
                 <div class="mb-3">
                   <label style="font-family:'Oswald', sans-serif;" class="form-label">TOURNAMENT DETAILS</label>
                   <!-- insert non-hardcoded tournament details here -->
@@ -113,18 +162,35 @@
                     End Jan 24, 2024    17:00
                   </p>
                 </div>
-                
-                <div style="text-align: right;">
-                    <a style="font-size: 50px; color: #ef216c; text-align: right;" href="{% url 'tournament_details' %}">OPEN</a>
-                </div>
-            </div>
-          </div>      
+              </div>
+              <div class="container float" style="text-align:right">
+                <a class="buttonStart" style="border-radius:50%; text-align:right"  href="{% url 'tournament_details' %}">OPEN</a>
+              </div>
+          </div> 
+          
       </div>
+      
 
-      <div class="card mx-auto">
-        <a style="font-size: 50px; color: grey;" href="{% url 'tournament_details' %}">BETA INK</a>
+      
+      
+      <div class="card mx-auto"  style="padding:0px; margin-top: 40px;">
+        <div class="card-body" style="background-color:grey;  border-radius:15px">
+          <a style="font-size: 50px; color: white;" href="{% url 'tournament_details' %}">BETA INK</a>
+
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <i class="fa fa-edit" style="font-size:48px;color:white; padding-left:10px"></i>
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <i class="fa fa-trash-o" style="font-size:60px; color:white; float:right"></i>
+        
+          
+        </div>
           <div class="card-body">
               <div class="mb-3">
+
                 <label style="font-family:'Oswald', sans-serif;" class="form-label">TOURNAMENT DETAILS</label>
                 <!-- insert non-hardcoded tournament details here -->
                 <p>Splatoon Philippines second online tourney! Teams are premade and must consist of 4 or more players.
@@ -150,9 +216,7 @@
               </div>
           </div>
         </div>
-        <div class="fixed ">
-          <a href="{% url 'create_tournament' %}" class="btn btn-custom player">Create Tournament</a>
-        </div>    
+  
     </div>
     </div>
   </div>

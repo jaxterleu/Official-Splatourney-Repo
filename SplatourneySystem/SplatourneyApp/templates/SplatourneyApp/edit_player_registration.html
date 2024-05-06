@@ -1,0 +1,146 @@
+{% extends 'SplatourneyApp/base.html' %}
+{% block title %} <h1> Edit Player Registration </h1> {% endblock %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="SplatourneyApp/splatourney.css">
+</head>
+
+<body>
+  <style>
+        body{
+          background-color: transparent;
+        }
+        .card{
+          background-color: #D9D9D9;
+          width:800px;
+          padding-top: 60px;
+          padding-bottom: 40px;
+          padding-left: 40px;
+          padding-right: 40px;
+
+        }
+
+        .card-title{
+          text-decoration:solid;
+        }
+    
+        .form{
+          flex-direction: row;
+        }
+
+        .form-control{
+          border-radius: 10px;
+        }
+
+        .form-select{
+          border-radius: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          padding-right: 50px;
+        }
+      
+        .btn-primary {
+          color: white;
+          background-color:#008CC6;
+          border: none;
+          border-radius: 10px;
+        }
+  </style>
+
+  <div class="has-bg-img">
+    <div class="bg-img bg-cover" style="background-image: url('splatoon3-pattern-02-3840x2160-1.webp'); height:100%; width:100%;">
+      <div class="container">
+        <div class="card mx-auto">
+          <h5 class="card-title mx-auto">EDIT PLAYER REGISTRATION</h5>
+            <div class="card-body">
+              <form class="form" method="POST" action="{% url 'player_registration' %}"> {% csrf_token %}
+                <div class="mb-3">
+                  <label for="PlayerFirstName" class="form-label">FIRST NAME</label>
+                  <input type="text" class="form-control" id="FirstNameInput" name="p1fname" placeholder="Enter First name">
+                </div>
+                <div class="mb-3">
+                  <label for="PlayerLastName" class="form-label">LAST NAME</label>
+                  <input type="text" class="form-control" id="LastNameInput" name="p1lname" placeholder="Enter Last name">
+                </div>
+                <div class="mb-3">
+                  <label for="ign" class="form-label">IGN</label>
+                  <input type="text" class="form-control" id="ignInput" name="p1ign" placeholder="Enter in-game name">
+                </div>
+                <div class="mb-3">
+                  <label for="PlayerDiscordID" class="form-label"> Discord ID</label>
+                  <input type="text" class="form-control" id="PlayerDiscordIDInput" name="p1dc" placeholder="Enter Discord ID">
+                </div>
+                <div class="mb-3">
+                  <label for="PlayerFriendCode" class="form-label">Friend Code</label>
+                  <input type="text" class="form-control" id="PlayerFriendCodeInput" name="p1fc" placeholder="Enter Friend Code">
+                </div>
+                <div class="mb-3">
+                  <label for="rank" class="form-label">CURRENT SPLATOON 3 RANK</label>
+                <div class="mb-3">
+                  <select class="form-select" name="p1rank">
+                    <option selected>Select Rank</option>
+                    <option value="1">C-</option>
+                    <option value="2">C</option>
+                    <option value="3">C+</option>
+                    <option value="1">B-</option>
+                    <option value="2">B</option>
+                    <option value="3">B+</option>
+                    <option value="1">A-</option>
+                    <option value="2">A</option>
+                    <option value="3">A+</option>
+                    <option value="1">S-</option>
+                    <option value="2">S+</option>
+                    <option value="3">X</option>
+                  </select>
+                </div>
+                </div>
+                  <div class="mb-3 justify-content-center" style="position:relative">
+                    <!--<label for="roles" class="form-label pt-3">PREFERRED TEAM ROLES</label>
+                    <div class="mb-3" style="margin-left: 50px;">
+                      
+                      <input type="checkbox" class="form-check-input" id="front-line">
+                      <label class="form-check-label" for="front-line">Front-line</label>
+
+                      <input type="checkbox" class="form-check-input" id="slayer" style="margin-left:25px;">
+                      <label class="form-check-label" for="slayer" style="margin-left:50px">Slayer</label>
+                    </div>
+                    <div class="mb-3" style="margin-left: 50px;">
+                      <input type="checkbox" class="form-check-input" id="mid-line">
+                      <label class="form-check-label" for="mid-line"style="margin-left:1px">Mid-line</label>
+
+                      <input type="checkbox" class="form-check-input" id="skirmisher" style="margin-left:37px;">
+                      <label class="form-check-label" for="skirmisher"style="margin-left:60px">Skirmisher</label>
+                    </div>
+                    <div class="mb-3" style="margin-left: 50px;">
+                      <input type="checkbox" class="form-check-input" id="back-line">
+                      <label class="form-check-label" for="back-line">Back-line</label>
+
+                      <input type="checkbox" class="form-check-input" id="support"style="margin-left:30px;">
+                      <label class="form-check-label" for="support"style="margin-left:50px">Support</label>-->
+
+                      <select class="form-select" name="p1role">
+                        <option selected>Select Role</option>
+                        <option value="Front-line">Front-line</option>
+                        <option value="Slayer">Slayer</option>
+                        <option value="Mid-Line">Mid-Line</option>
+                        <option value="Skirmisher">Skirmisher</option>
+                        <option value="Back-Line">Back-Line</option>
+                        <option value="Support">Support</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary justify-content-right">SAVE CHANGES</button>
+
+              </form>
+            </div>
+          </div>   
+             
+      </div>
+    </div>
+  </div>
+</body>
+  
+
+{% endblock %}

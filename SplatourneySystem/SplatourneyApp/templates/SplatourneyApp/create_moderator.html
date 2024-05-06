@@ -1,5 +1,5 @@
 {% extends 'SplatourneyApp/base.html' %}
-{% block title %} <h1> Login Moderator</h1> {% endblock %}
+{% block title %} <h1> Create Moderator</h1> {% endblock %}
 
 {% block content %}
 <head>
@@ -53,7 +53,7 @@
     <div class="bg-img bg-cover" style="background-image: url('splatoon3-pattern-02-3840x2160-1.webp'); height:100%; width:100%;">
       <div class="container">
         <div class="card mx-auto">
-          <h5 class="card-title mx-auto">LOGIN</h5>
+          <h5 class="card-title mx-auto">CREATE MODERATOR</h5>
             <div class="card-body">
               <form class="form" method="POST" action="{% url 'login_moderator' %}"> {% csrf_token %}
                 <div class="mb-3">
@@ -64,7 +64,11 @@
                   <label for="ModPasswordTrial" class="form-label">PASSWORD</label>
                   <input type="Password" class="form-control" id="ModPasswordTrial" name='mod_password' placeholder="Enter Password">
                 </div>
-                  <button type="submit" class="btn btn-primary justify-content-right">LOGIN</button>
+                <div class="mb-3">
+                    <label for="ModPasswordTrialVerify" class="form-label">VERIFY PASSWORD</label>
+                    <input type="Password" class="form-control" id="ModPasswordTrialVerify" name='mod_password_verify' placeholder="Enter Password Again">
+                  </div>
+                  <button type="submit" class="btn btn-primary justify-content-right">CREATE</button>
               </form>
             </div>
           </div>      
