@@ -17,6 +17,7 @@
   </li>
 {% endblock %}
 
+
     {% block content %}
     <body>
         <!--Solo Heading-->
@@ -35,39 +36,23 @@
                
                 <thead>
                     <tr>
-                        <th class="table-dark" style="background-color: #008CC6" scope="col"> Player Name </th>
-                        <th class="table-dark" style="background-color: #008CC6" scope="col"> IGN </th>
-                        <th class="table-dark" style="background-color: #008CC6" scope="col"> Rank </th>
-                        <th class="table-dark" style="background-color: #008CC6" scope="col"> Role/s </th>
-                        <th class="table-dark" style="background-color: #008CC6" scope="col"> Check-in Status </th>
-                        
-                        <th class="table-dark" style="background-color: #008CC6" scope="col"> </th>
+                        <th class="table-dark" style="background-color: rgb(89, 89, 89)" scope="col"> User Name </th>
+                        <th class="table-dark" style="background-color:  rgb(89, 89, 89)" scope="col"> Button </th>
                     </tr>
                 </thead>
 
                 <tbody class="table-group-divider">
                     {% for p in Player %}
                         <tr>
-                                    <td> {{ p.getPlayerFullName }} </td>
-                                    <td> {{ p.getPlayer_in_game_name }} </td>
-                                    <td> {{ p.getPlayerRank }} </td>
-                                    <td> {{ p.getPlayerRole }} </td>
-                                    <td> <input type="checkbox" id="checkInStatus" name="checkInStatus" value="Checked-In"> </td>
-                            <td>
-                                <!--Buttons: Options-->
-                                <div class="row gy-2 gx-2 mb-2">
-                                    <div class="col-auto">
-                                        <a href="{% url 'edit_player_registration' %}" class="btn btn-dark shadow-sm" style="background-color: #f93195; border-color: #f93195;"> EDIT </a>
-                                    </div>
-                                </div>
-                            </td>
+                                <td> {{ p.getPlayerFullName }} </td>
+                                <td>
+                                    <!--Buttons: Options-->    
+                                    <a href="#" class="btn btn-dark shadow-sm" style="background-color: #f93195; border-color: #f93195;"> DELETE </a>
+                                </td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-        
-           
-        
     </body>
-    {% endblock %}
+{% endblock %}
